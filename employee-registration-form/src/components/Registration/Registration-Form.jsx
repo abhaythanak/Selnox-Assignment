@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import './Registration.css';
 
-function RegistrationForm() {
+function RegistrationForm({ addRegistration }) {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -12,8 +13,6 @@ function RegistrationForm() {
     description: '',
   });
 
-  const [registrations, setRegistrations] = useState([]);
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -22,20 +21,15 @@ function RegistrationForm() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-   
+  const handleSave = () => {
     if (!formData.firstName || !formData.lastName || !formData.dateOfBirth || !formData.study) {
       alert('Please fill in all required fields');
       return;
     }
 
-  
     const newRegistration = { ...formData };
-    setRegistrations([...registrations, newRegistration]);
+    addRegistration(newRegistration);
 
-   
     setFormData({
       firstName: '',
       lastName: '',
@@ -49,7 +43,6 @@ function RegistrationForm() {
   };
 
   const handleCancel = () => {
-   
     setFormData({
       firstName: '',
       lastName: '',
@@ -63,11 +56,13 @@ function RegistrationForm() {
   };
 
   return (
-    <div>
-      <h2>Registration Form</h2>
-      <form onSubmit={handleSubmit}>
-        
-        <div>
+    <div className='container'>
+      <h2>Employee  Registration  Form</h2>
+      <div className="main">
+      <form>
+         <div>
+          <div className="name-container">
+          <div className="name">
           <label htmlFor="firstName">First Name:</label>
           <input
             type="text"
@@ -76,9 +71,10 @@ function RegistrationForm() {
             value={formData.firstName}
             onChange={handleInputChange}
           />
+          </div> 
         </div>
-       
         <div>
+          <div className="name">
           <label htmlFor="lastName">Last Name:</label>
           <input
             type="text"
@@ -87,9 +83,10 @@ function RegistrationForm() {
             value={formData.lastName}
             onChange={handleInputChange}
           />
+          </div>
         </div>
-       
-        <div>
+        </div>
+        <div className='Birthday'>
           <label htmlFor="dateOfBirth">Date of Birth:</label>
           <input
             type="date"
@@ -99,8 +96,7 @@ function RegistrationForm() {
             onChange={handleInputChange}
           />
         </div>
-        
-        <div>
+        <div className='study'>
           <label htmlFor="study">Study:</label>
           <input
             type="text"
@@ -110,8 +106,8 @@ function RegistrationForm() {
             onChange={handleInputChange}
           />
         </div>
-       
         <div>
+          <div className="">
           <label htmlFor="startDate">Start Date:</label>
           <input
             type="date"
@@ -120,9 +116,10 @@ function RegistrationForm() {
             value={formData.startDate}
             onChange={handleInputChange}
           />
+          </div>
         </div>
-       
         <div>
+          <div className="">
           <label htmlFor="endDate">End Date:</label>
           <input
             type="date"
@@ -131,9 +128,9 @@ function RegistrationForm() {
             value={formData.endDate}
             onChange={handleInputChange}
           />
+          </div>         
         </div>
-        
-        <div>
+        <div className='salary'>
           <label htmlFor="currentSalary">Current Salary:</label>
           <input
             type="number"
@@ -143,8 +140,7 @@ function RegistrationForm() {
             onChange={handleInputChange}
           />
         </div>
-       
-        <div>
+        <div className='description'>
           <label htmlFor="description">Description:</label>
           <textarea
             id="description"
@@ -153,10 +149,16 @@ function RegistrationForm() {
             onChange={handleInputChange}
           />
         </div>
-        <button type="submit">Save</button>
-        <button type="button" onClick={handleCancel}>Cancel</button>
+        <div className="">
+        <button type="button" onClick={handleSave}>
+          Save
+        </button>
+        <button type="button" onClick={handleCancel}>
+          Cancel
+        </button>
+        </div>
       </form>
-
+      </div>
     </div>
   );
 }

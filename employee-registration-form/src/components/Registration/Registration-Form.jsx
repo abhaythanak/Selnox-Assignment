@@ -62,24 +62,24 @@ function RegistrationForm({ addRegistration }) {
       <form>
          <div>
           <div className="name-container">
-          <div className="name">
-          <label htmlFor="firstName">First Name:</label>
+          <div className="firstName">
+          <label htmlFor="firstName">First Name</label>
           <input
             type="text"
             id="firstName"
             name="firstName"
+            placeholder='Enter your name'
             value={formData.firstName}
             onChange={handleInputChange}
           />
           </div> 
-        </div>
-        <div>
-          <div className="name">
-          <label htmlFor="lastName">Last Name:</label>
+          <div className="lastName">
+          <label htmlFor="lastName">Last Name</label>
           <input
             type="text"
             id="lastName"
             name="lastName"
+            placeholder='Enter your name'
             value={formData.lastName}
             onChange={handleInputChange}
           />
@@ -87,11 +87,12 @@ function RegistrationForm({ addRegistration }) {
         </div>
         </div>
         <div className='Birthday'>
-          <label htmlFor="dateOfBirth">Date of Birth:</label>
+          <label htmlFor="dateOfBirth">Date of Birth</label>
           <input
             type="date"
             id="dateOfBirth"
             name="dateOfBirth"
+            placeholder="Enter your dob"
             value={formData.dateOfBirth}
             onChange={handleInputChange}
           />
@@ -102,12 +103,13 @@ function RegistrationForm({ addRegistration }) {
             type="text"
             id="study"
             name="study"
+            placeholder=''
             value={formData.study}
             onChange={handleInputChange}
           />
         </div>
-        <div>
-          <div className="">
+        <div className='date'>
+          <div className="startDate">
           <label htmlFor="startDate">Start Date:</label>
           <input
             type="date"
@@ -117,9 +119,7 @@ function RegistrationForm({ addRegistration }) {
             onChange={handleInputChange}
           />
           </div>
-        </div>
-        <div>
-          <div className="">
+          <div className="endDate">
           <label htmlFor="endDate">End Date:</label>
           <input
             type="date"
@@ -149,7 +149,7 @@ function RegistrationForm({ addRegistration }) {
             onChange={handleInputChange}
           />
         </div>
-        <div className="">
+        <div className="btn">
         <button type="button" onClick={handleSave}>
           Save
         </button>

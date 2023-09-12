@@ -55,14 +55,14 @@ function App() {
         registrationToEdit={registrations[editIndex]}
         cancelEdit={cancelEdit}
       />
-      {/* <DataDisplay registrations={registrations} handleEdit={handleEdit} handleDelete={handleDelete} />
+      <DataDisplay registrations={registrations} handleEdit={handleEdit} handleDelete={handleDelete} />
       {editIndex !== -1 && (
         <EditPage
           registrationToEdit={registrations[editIndex]}
           updateRegistration={updateRegistration}
           cancelEdit={cancelEdit}
         />
-      )} */}
+      )}
     </div>
   );
 }

@@ -29,48 +29,58 @@ function EditPage({ registrationToEdit, updateRegistration, cancelEdit }) {
   return (
     <div>
       <h2>Edit Registration</h2>
+      <div className="main">
       <form>
-        <div>
-          <label htmlFor="firstName">First Name:</label>
+      <div>
+          <div className="name-container">
+          <div className="firstName">
+          <label htmlFor="firstName">First Name</label>
           <input
             type="text"
             id="firstName"
             name="firstName"
+            placeholder='Enter your name'
             value={formData.firstName}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
-          <label htmlFor="lastName">Last Name:</label>
+          </div> 
+          <div className="lastName">
+          <label htmlFor="lastName">Last Name</label>
           <input
             type="text"
             id="lastName"
             name="lastName"
+            placeholder='Enter your name'
             value={formData.lastName}
             onChange={handleInputChange}
           />
+          </div>
         </div>
-        <div>
-          <label htmlFor="dateOfBirth">Date of Birth:</label>
+        </div>
+        <div className='Birthday'>
+          <label htmlFor="dateOfBirth">Date of Birth</label>
           <input
             type="date"
             id="dateOfBirth"
             name="dateOfBirth"
+            placeholder="Enter your dob"
             value={formData.dateOfBirth}
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className='study'>
           <label htmlFor="study">Study:</label>
           <input
             type="text"
             id="study"
             name="study"
+            placeholder=''
             value={formData.study}
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className='date'>
+          <div className="startDate">
           <label htmlFor="startDate">Start Date:</label>
           <input
             type="date"
@@ -79,8 +89,8 @@ function EditPage({ registrationToEdit, updateRegistration, cancelEdit }) {
             value={formData.startDate}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
+          </div>
+          <div className="endDate">
           <label htmlFor="endDate">End Date:</label>
           <input
             type="date"
@@ -89,8 +99,9 @@ function EditPage({ registrationToEdit, updateRegistration, cancelEdit }) {
             value={formData.endDate}
             onChange={handleInputChange}
           />
+          </div>         
         </div>
-        <div>
+        <div className='salary'>
           <label htmlFor="currentSalary">Current Salary:</label>
           <input
             type="number"
@@ -100,7 +111,7 @@ function EditPage({ registrationToEdit, updateRegistration, cancelEdit }) {
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className='description'>
           <label htmlFor="description">Description:</label>
           <textarea
             id="description"
@@ -116,6 +127,7 @@ function EditPage({ registrationToEdit, updateRegistration, cancelEdit }) {
           Cancel
         </button>
       </form>
+      </div>
     </div>
   );
 }

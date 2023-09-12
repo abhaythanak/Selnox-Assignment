@@ -2,24 +2,6 @@ import React from 'react';
 import './Data.css';
 function DataDisplay({ registrations, handleEdit, handleDelete }) {
   return (
-    // <div>
-    //   <h2>Registrations</h2>
-    //   <div>
-    //     {registrations.map((registration, index) => (
-    //       <div key={index} className='row'>
-    //         <p>{registration.firstName}</p>
-    //         <p>{registration.lastName}</p>
-    //         <p>{registration.dateOfBirth}</p>
-    //         <p>{registration.study}</p>
-    //         <p>{registration.startDate}</p>
-    //         <p>{registration.endDate}</p>
-    //         <p>{registration.currentSalary}</p>
-    //         <p>{registration.description}</p> 
-    //         <button type="button" onClick={() => handleEdit(index)}>Edit</button>
-    //         <button type="button" onClick={() => handleDelete(index)}>Delete</button>
-    //       </div>
-    //     ))}
-    //   </div>
       <>
         <div className="table-wrapper">
             <div className="table-title">
